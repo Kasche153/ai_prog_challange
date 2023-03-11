@@ -93,8 +93,7 @@ x = cap_data(x)
 
 x = process_data(x)
 # x.to_csv("test.csv", encoding='utf-8')
-print(x.to_string())
-print(x.to_string())
+
 # print(x["x12"].to_string())
 # dataframe["x1"].astype("float")
 
@@ -122,9 +121,9 @@ k_folds = KFold(n_splits = 2)
 #classifier = BaggingClassifier()
 #classifier = GaussianNB()
 #classifier = LogisticRegression()
-#classifier = KNeighborsClassifier()
-classifier = RandomForestClassifier(n_estimators=100)
-classifier = AdaBoostClassifier()
+classifier = KNeighborsClassifier()
+# classifier = RandomForestClassifier(n_estimators=100)
+# classifier = AdaBoostClassifier()
 
 
 
