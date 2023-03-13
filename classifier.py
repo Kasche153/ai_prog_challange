@@ -22,7 +22,7 @@ dataframe = pd.read_csv("output.csv")
 
 file = open("evaluation.txt", "w")
 
-test = pd.read_csv("EvaluateOnMe-5.csv")
+test = pd.read_csv("EvaluateOnMe-6.csv")
 le = LabelEncoder()
 
 # dataframe["x6"] = le.fit_transform(dataframe.x6.values)
@@ -60,19 +60,19 @@ def cap_data(df):
 
 
 def process_data(data: pd.DataFrame):
+    data["x1"].astype("float")
 
     # x.drop("x5", axis=1,inplace=True)
-    data["x1"].astype("float")
-    # data["x11"].replace("F", "False",inplace=True)
-    # data["x12"].replace("F", "False", inplace=True)
-    # data["x11"].replace("Tru", "True", inplace=True)
-    # data["x12"].replace("Flase", "False", inplace=True)
+    data["x11"].replace("F", "False",inplace=True)
+    data["x12"].replace("F", "False", inplace=True)
+    data["x11"].replace("Tru", "True", inplace=True)
+    data["x12"].replace("Flase", "False", inplace=True)
     data.drop("x3", inplace=True, axis=1)
     data["x6"] = le.fit_transform(data["x6"].values)
     data.drop("x11", inplace=True , axis=1)
     data.drop("x12", inplace=True , axis=1)
-    imp_mean = SimpleImputer(strategy='mean')
-    data = imp_mean.fit_transform(data)
+    # imp_mean = SimpleImputer(strategy='mean')
+    # data = imp_mean.fit_transform(data)
 
 
     return data
